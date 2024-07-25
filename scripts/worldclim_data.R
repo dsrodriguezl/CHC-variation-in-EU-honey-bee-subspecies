@@ -1,3 +1,4 @@
+# Script to download climatic data from the WorldClim 2.1
 
 # Install the packages to ensure they are up to date
 install.packages(c("raster", "geodata"))

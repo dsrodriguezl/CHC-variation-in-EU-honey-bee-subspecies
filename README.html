@@ -364,7 +364,11 @@ CHC-variation-in-EU-honey-bee-subspecies.Rproj file. This makes the R
 project portable, as the working directory is automatically set within
 RStudio to the folder of the repository.</p>
 <p>This R project uses the package renv to create a reproducible
-environment. See <a href="https://rstudio.github.io/renv/" class="uri">https://rstudio.github.io/renv/</a> for more details.</p>
+environment. To download and install all project’s dependencies, you
+need to use <code>renv::restore()</code> the first time you open the R
+project in RStudio. This will ensure you can run the code properly to
+reproduce the analyses of the study. See <a href="https://rstudio.github.io/renv/" class="uri">https://rstudio.github.io/renv/</a> for more details on the
+usage of renv.</p>
 <div id="data" class="section level2">
 <h2>Data:</h2>
 <p>samples_list.csv contains the samples metadata.</p>

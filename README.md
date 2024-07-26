@@ -6,7 +6,9 @@ The repository corresponds to an R project repository that can be directly open 
 This makes the R project portable, as the working directory is automatically set within RStudio to the folder of the repository.
 
 This R project uses the package renv to create a reproducible environment.
-See https://rstudio.github.io/renv/ for more details.
+To download and install all project's dependencies, you need to use `renv::restore()` the first time you open the R project in RStudio.
+This will ensure you can run the code properly to reproduce the analyses of the study.
+See https://rstudio.github.io/renv/ for more details on the usage of renv package.
 
 ## Data:
 

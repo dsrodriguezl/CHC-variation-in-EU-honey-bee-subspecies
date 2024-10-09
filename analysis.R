@@ -305,21 +305,28 @@ all_plot <- ggplot(segment(ddata_all)) +
                   , x = x
                   , y = y - 0.025
                   , hjust = "left"
-                  , fontface = "italic")
+                  , fontface = "italic"
+                  # , color = Subspecies
+            )
             # Keep the text of the same size as legend labels' text
-            , size = cluster_theme$legend.text$size / .pt
+            , size = cluster_theme$legend.text$size * 1.3 / .pt
             , alpha = 0.9) +
   geom_point(data = dlabs_all
-            , aes(shape = Task
-                  , x = x
-                  , y = y - 0.01)
-            , size = 2
-            , fill = "black") +
+             , aes(shape = Task
+                   , fill = Subspecies
+                   , x = x
+                   , y = y - 0.01)
+             , size = 2.8) +
   scale_y_reverse() +
   scale_shape_manual(values = c("Foragers" = 21
                                 , "Nurses" = 24)) +
+  scale_fill_viridis_d(guide = "none") +
   coord_flip(clip = "off") +
-  cluster_theme2 
+  cluster_theme2 + 
+  theme(plot.title = element_text(hjust = 0)
+        , plot.title.position = "plot"
+        , legend.text = element_text(size = cluster_theme$legend.text$size * 1.2)
+        , legend.key.size = cluster_theme$legend.key.size * 1.2)
 
 # Export plot
 ggsave(here("figs"
